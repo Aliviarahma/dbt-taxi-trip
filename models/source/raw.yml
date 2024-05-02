@@ -1,0 +1,77 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: nyc_taxi_trip
+        columns:
+              - name: VendorID
+                tests:
+                  - not_null
+              - name: tpep_pickup_datetime
+                tests:
+                  - not_null
+              - name: tpep_dropoff_datetime
+                tests:
+                  - not_null
+              - name: Passenger_count 
+                tests:
+                  - not_null
+              - name: Trip_distance
+                tests:
+                  - not_null
+              - name: PULocationID
+                tests:
+                  - not_null
+              - name: DOLocationID
+                tests:
+                  - not_null
+              - name: RateCodeID
+                tests:
+                  - not_null
+                  - accepted_values:
+                      values: ['Standard rate', 'JFK', 'Newark', 'Nassau or Westchester', 'Negotiated fare', 'Group ride']
+              - name: Store_and_fwd_flag
+                tests:
+                  - not_null
+                  - accepted_values:
+                      values: ['Y', 'N']
+              - name: Payment_type
+                tests:
+                  - not_null
+                  - accepted_values:
+                      values: ['Credit card', 'Cash', 'No charge', 'Dispute', ' Unknown', 'Voided trip']
+              - name: Fare_amount
+                tests:
+                  - not_null
+              - name: Extra
+                tests:
+                  - not_null
+              - name: MTA_tax
+                tests:
+                  - not_null
+              - name: Improvement_surcharge 
+                tests:
+                  - not_null
+              - name: Tip_amount
+                tests:
+                  - not_null
+              - name: Tolls_amount 
+                tests:
+                  - not_null
+              - name: Tip_amount
+                tests:
+                  - not_null
+              - name: Total_amount 
+                tests:
+                  - not_null
+              - name: Congestion_Surcharge 
+                tests:
+                  - not_null
+              - name: Airport_fee 
+                tests:
+                  - not_null
+                
+                
+              
+  
